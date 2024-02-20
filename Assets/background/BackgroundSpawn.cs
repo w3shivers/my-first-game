@@ -28,7 +28,7 @@ public class BackgroundSpawn : MonoBehaviour
         if (BackgroundObject.transform.position.x <= 0 && !hasSpawnedNext)
         {
             hasSpawnedNext = true;
-            var position = new Vector3((float) 69.5, BackgroundObject.transform.position.y, 0);
+            var position = new Vector3((float) 69.5, BackgroundObject.transform.position.y, BackgroundObject.transform.position.z);
             Instantiate(BackgroundObject, position, transform.rotation);
         }
         else if (BackgroundObject.transform.position.x <= -80 && hasSpawnedNext)
