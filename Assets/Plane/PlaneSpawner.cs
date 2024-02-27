@@ -23,6 +23,7 @@ public class PlaneSpawner : MonoBehaviour
             timer += Time.deltaTime;
             return;
         }
+        
         SpawnRate = Random.Range(MinSpawnRate, MaxSpawnRate);
         timer = 0;
         SpawnPlane();

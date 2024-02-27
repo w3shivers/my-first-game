@@ -2,19 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlane : MonoBehaviour
+public class MovePlane : GameStatus
 {
     public float MinSpeed = 2;
     public float MaxSpeed = 5;
+    public int IncreaseSpeed = 20;
     private float MoveSpeed;
     public GameObject planeObject;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        MoveSpeed = Random.Range(MinSpeed, MaxSpeed);
+        float increaseSpeed = 0;
+        if (this.GameTime != 0)
+            increaseSpeed = (float)this.GameTime / IncreaseSpeed;
+        MoveSpeed = Random.Range(MinSpeed + increaseSpeed, MaxSpeed + increaseSpeed);
     }
-
     // Update is called once per frame
     void Update()
     {

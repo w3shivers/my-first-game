@@ -353,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameTimer: 0
   TimeDisplayed: {fileID: 263021157}
+  GameState: {fileID: 2081792839}
 --- !u!4 &361323022 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8742538545776668643, guid: 60ce5f4680ee17b418cb9da7afac0c76, type: 3}
@@ -1349,7 +1350,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Speel Weer?
+  m_Text: Speel Weer
 --- !u!222 &1887158868
 CanvasRenderer:
   m_ObjectHideFlags: 0

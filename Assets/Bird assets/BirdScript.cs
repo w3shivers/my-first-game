@@ -12,9 +12,20 @@ public class BirdScript : MonoBehaviour
     private bool GameEnded = false;
     public GameObject GameOverScreen;
 
+    void Start()
+    {
+        GameState.PauseGame();
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (GameState.GamePaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                GameState.ResumeGame();
+            return;
+        }
         if (GameState.GameOver)
         {
             if ( ! GameEnded )
