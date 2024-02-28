@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BirdScript : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class BirdScript : MonoBehaviour
     public GameStatus GameState;
     private bool GameEnded = false;
     public GameObject GameOverScreen;
+    public Text Score;
+
 
     void Start()
     {
@@ -29,7 +32,11 @@ public class BirdScript : MonoBehaviour
         if (GameState.GameOver)
         {
             if ( ! GameEnded )
+            {
+                string scoreText = GameState.GameTime.ToString() + " sekondes";
+                Score.text = scoreText;
                 GameOverScreen.SetActive(true);
+            }
             return;
         }
         if (Input.GetKeyDown(KeyCode.Space) && ! IsFlying)

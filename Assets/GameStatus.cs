@@ -39,6 +39,7 @@ public class GameStatus : MonoBehaviour
 
     public void PauseGame()
     {
+        GameOver = false;
         GamePaused = true;
         Time.timeScale = 0;
     }
